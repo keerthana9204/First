@@ -1,22 +1,23 @@
 version: 0.0
 os: linux
 files:
-  - source: /
-    destination: /tmp/deploy/
+   - source: /
+     destination: /tmp/deploy/
+
 hooks:
-  BeforeInstall:
+   BeforeInstall:
     - location: scripts/before_install.sh
       timeout: 300
       runas: root
-  AfterInstall:
+   AfterInstall:
     - location: scripts/download_dumble.sh
       timeout: 300
       runas: root
-  ApplicationStart:
+   ApplicationStart:
     - location: scripts/install.sh
       timeout: 300
       runas: root
-  ValidateService:
+   ValidateService:
     - location: scripts/after_install.sh
       timeout: 300
       runas: root
