@@ -5,18 +5,18 @@ files:
     destination: /tmp/deploy/
 hooks:
   BeforeInstall:
-    - location: Scripts/before_install.sh
+    - location: scripts/before_install.sh
       timeout: 300
       runas: root
   AfterInstall:
-    - location: Scripts/download_dumble.sh
+    - location: scripts/download_dumble.sh
       timeout: 300
       runas: root
   ApplicationStart:
-    - location: Scripts/install.sh
+    - location: scripts/install.sh
       timeout: 300
       runas: root
   ValidateService:
-    - location: Scripts/after_install.sh
+    - location: scripts/after_install.sh
       timeout: 300
       runas: root
